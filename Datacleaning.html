@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Datacleaning</title>
+    <style>
+        html{width: 100%;height: 100%;}
+        .column{
+           float: left;
+           width: 50%;
+        }  
+
+        .row:after {
+
+              content: "";
+            display: table;
+            clear: both;
+
+        }
+        
+    </style>
+</head>
+<body bgcolor="e2eef4">
+<div class="row">
+  
+    <h1 style="color:rgb(255, 1, 1);text-align:center;"><b>DATA REDUCTION AND DATA CLEANING </b></h1> 
+     <br> 
+     <br>
+   <div class="column">
+    <font size="5" align="center">Transforming the raw data in a useful and efficient format.The following steps are carried in Data Preprocessing </font>
+    <br>
+    <br>
+    <ul>
+        <li style="font-size:20px"><b><u>Handling Missing Values</u></b></li>
+        <br>
+        <font size="5">Missing data is defined as the values or data that is not stored (or not present) for some variable/s in the given dataset.So that all algorithms doesn’t work properly with missing data and hence we have to handle it properly.In our dataset 
+            features such as ID, N_Days, Age, Edema and some others have missing values. All of this are handled here as a first step.</font>  
+        
+        <br>
+        <br>
+                         
+        <li style="font-size:20px"><b><u>Outlier Removal</u></b></li>
+         <br>
+         <br>
+         <h3>Before outlier removal</h3>
+        <img src="static/image/img5.png" width="600px" height="600px" align="center"> 
+        <br>
+        <br>
+        <font size="5">Sometimes a dataset can contain extreme values that are outside the range of what is expected and unlike the other data (unusual event). The columns Bilirubin, Cholesterol, Albumin, Copper, Alk_Phos, SGOT,
+             Tryglicerides, Platelets, Prothrombin contains outliers and which is replaced by flooring and capping and is shown in the below figure.</font>
+        <br>
+        <br>
+        <h3>After outlier removal</h3>
+        <img src="static/image/img6.png" width="600px" height="600px" align="center"> 
+        <br>
+        <br>
+        <br>
+        <li Style="font-size:20px"><b><u>Feature Reduction</u></b></li>
+        <br>
+        <br>
+        <h3>Correlation Heatmap</h3>
+        <img src="static/image/img9.png" width="600px" height="600px" align="center">
+        <br>
+        <br>
+        <font size="5">Correlation between variables is also found with the help of Heatmap and since no variables are highly corelated with each other every variables
+             should be included in model and can affect the dependent variable Stage.But here Some of the columns(ID, N_Days, Status) doesn’t contribute or fit to the feature prediction.
+             So these variables are removed</font>
+        <br>
+        <br>     
+        
+    </ul>  
+    </div>
+    <div class="column">
+        <br>
+        <br>
+        <br>
+        <ul>
+            <li style="font-size:20px"><b><u>Encoding</u></b></li>
+            <br>
+            <font size="5">Encoding is a technique of converting categorical variables into numerical values so that it could be easily fitted to a machine learning model.Here we are using Label Encoding: This technique will be used only for Ordinal categories. Ranks are provided based on the importance of 
+                the category.  Categorical data (Status, Drug, Sex, Ascites, Hepatomegaly, Spiders and Edema ) is replaced with Integer.</font>
+            <br>
+            <br>
+            <br>
+            <li style="font-size:20px"><b><u>Handling Skewness</u></b></li>
+            <br>
+            <br>
+            
+            <h3>Before Removing Skewness </h3>
+            <img src="static/image/img7.png" width="600px" height="600px" align="center">
+            <br>
+            <br>
+            <font size="5">A data is called as skewed when curve appears distorted or skewed either to the left or to the right, in a statistical distribution. 
+                Log transformation is used to remove the right-skewness of numerical data.</font>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3>After Removing Skewness </h3>
+            <img src="static/image/img8.png" width="600px" height="600px" align="center">    
+            <br>
+            <br>
+            <br>
+            <li Style="font-size:20px"><b><u>Standardization (Standard Scaling)</b></u></li>
+            <br>
+            <br>
+            <br>
+            <font size="5">To bring down all the features to a common scale. </font>
+            <br>
+            <br>
+        </ul>
+</div> 
+</div>
+
+</body>
+</html>
